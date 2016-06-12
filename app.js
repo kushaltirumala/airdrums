@@ -22,6 +22,19 @@ function getTrackNumber(pos) {
   }
 }
 
+function showDrumPlayed(number){
+  if(typeof number !== "undefined"){
+    var i = document.getElementById(number.toString());
+
+    if(i!=null)
+      console.log('bchen');
+      i.style.fill = "#2c3e50";
+      setTimeout(function() {
+        i.style.fill="#ffffff"
+      }, 100);
+    }
+}
+
 Leap.loop(function (frame) {
 	if(frame.valid) {
 	if(frame.gestures.length > 0){
@@ -29,8 +42,10 @@ Leap.loop(function (frame) {
         switch (gesture.type){
           case "keyTap":
             var track = getTrackNumber(frame.gestures[0].position);
-            console.log('playing track number' + track);
+            console.log('playing track number ' + track);
             playAudio(track);
+            showDrumPlayed(track);
+
         }
     });
   } 
