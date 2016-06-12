@@ -1,8 +1,6 @@
 const increment = 100;
 
-
 var audioType = '.mp3'
-
 
 songs = ['clave', 'hihat', 'kick', 'rim', 'snare'];
 
@@ -17,7 +15,7 @@ function playAudio(drumNumber){
 function getTrackNumber(pos) {
   if(pos != null) {
     var x = pos[0];
-    var number = Math.floor((x+300)/100);
+    var number = Math.floor((x+300)/increment);
     return number;
   }
 }
@@ -25,30 +23,25 @@ function getTrackNumber(pos) {
 function showDrumPlayed(number){
   if(typeof number !== "undefined"){
     var i = document.getElementById(number.toString());
-
-    if(i!=null)
-      console.log('bchen');
-      i.style.fill = "#2c3e50";
-      setTimeout(function() {
-        i.style.fill="#ffffff"
-      }, 100);
+    if(i!=null) {
+        i.style.fill = "#2c3e50";
+        setTimeout(function() { i.style.fill="#ffffff" }, 100);
     }
+  }
 }
 
 Leap.loop(function (frame) {
-	if(frame.valid) {
-	if(frame.gestures.length > 0){
-    frame.gestures.forEach(function(gesture){
+  if(frame.valid) {
+    if(frame.gestures.length > 0){
+      frame.gestures.forEach(function(gesture){
         switch (gesture.type){
           case "keyTap":
             var track = getTrackNumber(frame.gestures[0].position);
             console.log('playing track number ' + track);
             playAudio(track);
             showDrumPlayed(track);
-
-        }
-    });
-  } 
-}
-
+          }
+      });
+    } 
+  }
 });
