@@ -20,7 +20,7 @@ function getTrackNumber(pos) {
   }
 }
 
-function showDrumPlayed(number){
+function showDrumPlayed(number) {
   if(typeof number !== "undefined"){
     var i = document.getElementById(number.toString());
     if(i!=null) {
