@@ -1,4 +1,4 @@
 # airdrums
 drum in the air with LeapMotion
  
-todo: integrate with customized grid to create more accurate sounds
+todo: todo integrate velocity measurements to change loudness of the resulting sound
