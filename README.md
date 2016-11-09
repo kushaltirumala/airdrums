@@ -1,4 +1,4 @@
 # airdrums
 drum in the air with LeapMotion
  
-todo: integrate velocity measurements to change loudness of the resulting sound
+todo:  integrate velocity measurements to change loudness of the resulting sound
