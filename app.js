@@ -2,7 +2,8 @@ const increment = 100;
 
 var audioType = '.mp3'
 
-songs = ['clave', 'hihat', 'kick', 'rim', 'snare'];
+    songs = ['clave', 'hihat', 'kick', 'rim', 'snare'];
+
 
 function playAudio(drumNumber){
   var audioPlayer = document.getElementById('audio');
